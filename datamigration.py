@@ -14,7 +14,7 @@ def lambda_handler():
             continue
         filename = Source_key.split("/")[-1] 
         destination_key = f"{destination_prefix}{filename}"
-        if filename.endswith(".ipynb"):
+        if filename.endswith(".py"):
             client.copy_object(
                 Bucket=Source_bucket,
                 CopySource={"Bucket": Source_bucket, "Key": Source_key},               
